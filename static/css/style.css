@@ -16,18 +16,17 @@ html
     clear:  both;
 }
 
-a 
+a
 {
 
 }
 
 #header {
-    text-align: center;
+	margin-left: 15px;
 	width: 100%;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	background-color: #fff;/*#e7eeef;*/
 	margin-bottom: 25px;
 }
 
@@ -51,6 +50,50 @@ h2
 	font-size: 36px;
 }
 
+div.p1
+{
+	width: 10%;
+	margin-top: 10px;
+	float: left;
+}
+div.p1 p
+{   
+	font-size: 30px;
+	ms-transform: rotate(-45deg); /* IE 9 */
+    webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    transform: rotate(-45deg);
+	color: #FF6840;
+	width: 70%;
+	margin-left: -53px;
+	margin-bottom: -26px;
+}
+div.p1 img
+{
+	width: 100%;
+}
+
+div.p2
+{
+	width: 10%;
+	margin-top: 10px;
+	float: left;
+}
+div.p2 p
+{
+	font-size: 30px;
+    ms-transform: rotate(45deg); /* IE 9 */
+    webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+	color: #FF6840;
+	width: 70%;
+	margin-left: 54px;
+	margin-bottom: -5px;
+}
+div.p2 img
+{
+	width: 100%;
+}
+
 div#icons 
 {
 	margin-top: 70px;
@@ -61,13 +104,13 @@ div#icons
 
 div#icons img#get_help
 {
-	width: 30%;
-	margin-right: 40%;
+	width: 25%;
+	margin-right: 30%;
 	float: left;
 }
 
 div#icons img#login
 {
-	width: 30%;
+	width: 25%;
 	float: left;
 }
