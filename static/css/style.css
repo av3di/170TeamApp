@@ -1,34 +1,73 @@
+@import url("reset.css");
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Quicksand);
+html 
+{
+	background: url(./../images/bg1.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: #000;
+	font-family: 'Shadows Into Light';
+}
+
 .clear_floats {
     clear:  both;
 }
 
-#page {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+a 
+{
+
 }
 
-header {
-    font-size: 48px;
-    margin-bottom: 15px;
+#header {
     text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background-color: #fff;/*#e7eeef;*/
+	margin-bottom: 25px;
 }
 
-h1 {
+header
+{
+    font-size: 72px;
+    margin-bottom: 10px;
+	color: #23AE9D;
+}
+
+h1 
+{
+	margin-top: 40px;
     text-align: center;
+	font-size: 48px;
+	color: #000;
 }
 
-div#opening {
-    width: 70%;
-    margin-right: 15%;
-	margin-left: 15%;
-	margin-top: 15px;
-	text-align: center;
+h2
+{
+	font-size: 36px;
 }
 
+div#icons 
+{
+	margin-top: 70px;
+	width: 40%;
+	margin-left: 30%;
+	margin-right: 30%;
+}
 
-div#opening img {
-    width: 100%;
+div#icons img#get_help
+{
+	width: 30%;
+	margin-right: 40%;
+	float: left;
+}
+
+div#icons img#login
+{
+	width: 30%;
+	float: left;
 }
