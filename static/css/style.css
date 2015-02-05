@@ -71,3 +71,11 @@ div#icons img#login
 	width: 30%;
 	float: left;
 }
+
+
+
+div#intro {
+    width:100%;
+    margin-left:10% ;
+    margin-right:10% ;
+    }
