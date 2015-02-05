@@ -20,21 +20,15 @@ h1 {
     text-align: center;
 }
 
-nav#main_nav {
-    text-align: center;
+div#opening {
+    width: 70%;
+    margin-right: 15%;
+	margin-left: 15%;
+	margin-top: 15px;
+	text-align: center;
 }
 
-nav#main_nav div.nav_sections {
-    width: 30%;
-    margin-right: 5%;
-    float: left;
-}
 
-nav#main_nav div#transportation {
-    margin-right: 0%;
-}
-
-nav#main_nav div.nav_sections img {
+div#opening img {
     width: 100%;
-    margin-top: 15px;
 }
