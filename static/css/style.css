@@ -63,7 +63,8 @@ h2
 
 form
 {
-	width: 100%;
+	width: 40%;
+	padding-left: 30% 
 }
 
 label
@@ -118,6 +119,21 @@ input
 	width: 30%;
 	float: left;
 }
+
+
+#container
+{
+	width: 100%:;
+}
+
+
+
+#container2
+{
+	width: 25%;
+	padding-left: 37.5%
+}
+
 
 
 
