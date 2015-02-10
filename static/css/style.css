@@ -101,6 +101,26 @@ input
 	cursor: pointer;
 }
 
+#sign_Up
+{
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	border: 3px solid #74ff9a;
+	border-radius: 15px;
+	font-size: 24px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 15px;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0); /* Set transparent */
+}
+
+
+
+
 #outer_links
 {
 	margin-top: 10px;
@@ -134,6 +154,17 @@ input
 	padding-left: 37.5%
 }
 
+#to_Register
+{
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	margin-bottom: 30px; 
+
+
+}
 
 
 
