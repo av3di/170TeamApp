@@ -14,10 +14,10 @@
 	<h1>Log In</h1>
 	<form action="index_home.html">
 		<label for="email">Email:</label>
-		<input type="text" id="email"  name="email" value="">
+		<input type="text" id="email"  name="email" value="" required>
 		<br>
 		<label for="password">Password:</label>
-		<input type="pasword" id="password" name="password" value="">
+		<input type="password" id="password" name="password" value="" required>
 		<br><br>
 		<input id="submit_button" type="submit" value="Submit">
 	</form>
@@ -30,41 +30,5 @@
 		</div>
 	</div>
 </div>
-<script>
-$(function() {
-        $('form').submit(function(e) {
-                //Initial validation
-                if($('#email').val().length==0)
-                {
-                    alert("Email field is blank!");
-					e.preventDefault();
-                    return false
-                }
-				if($('#password').val().length()==0)
-                {
-                    alert("Password field is blank!");
-					e.preventDefault();
-                    return false
-                }
-                //After validating form, send to page B
-                $.post('PageB.php', {
-                        'field1': $('#email').val(),
-                        'field2': $('#password').val()
-                        //etc
-                    }, function (data) {
-                        //Validate the response from Page B
-                        /*if (data!="success")
-                        {
-                            alert("Error:"+data);
-                        }
-                        else
-                        {*/
-                            //Go to Page C if Page B was successful
-                            window.location.href = "index_home.html";
-                        //}
-                    });
-        return false;
-    });
-</script>
 </body>
 </html>
