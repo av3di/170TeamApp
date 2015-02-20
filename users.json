@@ -1,13 +1,40 @@
-
-	[
-		{
-			"username": "Lucy Ball",
-			"email": "lucy@ucsd.edu",
-			"password": "lucy"
-		},
-		{
-			"username": "White Rabbit",
-			"email": "rabbit@ucsd.edu",
-			"password": "rabbit"
-		}
-	]
+[
+    {
+        "username": "Lucy Ball",
+        "email": "lucy@ucsd.edu",
+        "password": "lucy",
+        "notes": [
+            {
+                "class": "CSE 101",
+                "note": "Today I learned that slowsort is slow."
+            },
+            {
+                "class": "CSE 170",
+                "note": "User input is very important."
+            },
+            {
+                "class": "Math 20F",
+                "note": "Pi is 3.142342. The square root of 500 is 25. Vectors are used in computer graphics. I just got Deja Vu. Not sure if thats capitalized. Testing for max length of note."
+            }
+        ]
+    },
+    {
+        "username": "White Rabbit",
+        "email": "rabbit@ucsd.edu",
+        "password": "rabbit",
+        "notes": [
+            {
+                "class": "Wonderland 101",
+                "note": "JSON arrays are written inside square brackets."
+            },
+            {
+                "class": "Web Development 120",
+                "note": "Just like JavaScript, a JSON array can contain multiple objects. Because JSON uses JavaScript syntax, no extra software is needed."
+            },
+            {
+                "class": "Vacation",
+                "note": "With JavaScript you can create an array of obejcts."
+            }
+        ]
+    }
+]

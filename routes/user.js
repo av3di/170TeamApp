@@ -1,15 +1,18 @@
 var users = require('../users.json');
 
 exports.userInfo = function(req, res) {
-	console.log("The username passed in is " + req.params.username);
-	var user_name = req.params.username;
+	console.log("The email passed in is " + req.body.email);
+	var user_email = req.body.email;
 	var current_user = users[0];
 	var index = 0;
 	while(index < users.length)
 	{
-		if(users[index].username == user_name)
+		if(users[index].email == user_email)
 		  current_user = users[index]
 		index++;
 	}
-  	res.json(current_user);
-}
+  	res.render('user', {
+		'username': current_user.username,
+		'notes': current_user.notes
+	});
+};

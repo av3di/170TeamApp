@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Template</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/styles2.css" rel="stylesheet">
+  </head>
+  <body>
+<nav class="navbar navbar-static">
+   <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/user"><b>Notas</b></a>
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </a>
+    </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">  
+          <li><a href="/user">Home</a></li>
+          <li><a href="#">My Notes</a></li>
+		  <li><a href="/">Log Out</a></li>
+      </div>
+    </div>
+</nav><!-- /.navbar -->
+
+<header class="masthead">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1><a href="#" title="Scroll down for your viewing pleasure">Notes</a></h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Begin Body -->
+<div class="container">
+  <div class="no-gutter row">
+          <!-- left side column -->
+        <div class="col-md-2">
+                <div class="panel panel-default" id="sidebar">
+                <div class="panel-heading" style="background-color:#888;color:#fff;">My classes</div> 
+                <div class="panel-body">
+            <ul class="nav nav-stacked">
+			{{#each notes}}
+                    <li><a href="#">{{class}}</a></li>
+			{{/each}}
+        </ul>
+		<div class="accordion" id="accordion2">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+									  <br>
+									  Add Course...
+									</a>
+								</div>
+								<div id="collapseOne" class="accordion-body collapse in">
+									<div class="accordion-inner">
+										<form action="/addclassm" method="post" id="classForm">
+											<input type="text" id="classname" name="class" />
+											<input type='submit' id='btnAdd' value='Add Course'>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div><!--/acc-->
+						<div class="accordion" id="accordion3">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+									  <br>
+									  Delete A Course...
+									</a>
+								</div>
+								<div id="collapseOne" class="accordion-body collapse in">
+									<div class="accordion-inner">
+										<form action="/deleteclassm" method="post">
+											<input type="text" name="class" />
+											<input type='submit' value='Delete Course'>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div><!--/acc-->               
+                </div><!--/panel body-->
+              </div><!--/panel-->
+          </div><!--/end left column-->
+            
+
+
+
+          <!-- right content column-->
+          <div class="col-md-7" id="content">
+              <div class="panel">
+          <div class="panel-heading" style="background-color:#111;color:#fff;">Quick Add</div>   
+                <div class="panel-body">
+                  
+                  <div class="row">
+                  <div class="col-md-8">
+                    <div id="wrapper">
+
+                    <form id="paper" method="post" action="/addnote">
+
+						<div id="margin">Class Name:  
+							<select name="class">
+							  {{#each notes}}
+								<option value="{{class}}">{{class}}</option>
+							  {{/each}}
+							</select> 
+						</div>
+						<textarea placeholder="Enter something funny." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>  
+						<br>
+						<input id="createNote" type="submit" value="Create">
+    
+                    </form>
+
+                  </div>
+                  </div>   
+                </div> 
+                  <!--/panel-body-->
+                </div><!--/panel-->
+				<div class="panel">
+          <div class="panel-heading" style="background-color:#111;color:#fff;">Quick Add</div>   
+                <div class="panel-body">
+                  
+                  <div class="row">
+                  <div class="col-md-8">
+                    <div id="wrapper">
+
+                    <form method="post" action="/pullnote">
+
+						<div id="margin">Class Name to Update Notes:  
+							<select name="class">
+							  {{#each notes}}
+								<option value="{{class}}">{{class}}</option>
+							  {{/each}}
+							</select> 
+						</div>
+						<input id="pullNote" type="submit" value="Pull These Notes">
+					</form>
+					<form method="post" action="/updatenote">
+						<textarea name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; ">{{update_note}}</textarea>  
+						<br>
+						<input id="updateNote" type="submit" value="Update">
+                    </form>
+                  </div>
+                  </div>   
+                </div> 
+                  <!--/panel-body-->
+                </div><!--/panel-->
+                <!--/end right column-->
+        </div> 
+    </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-right"><h5>Notas</h5></div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+	<script>
+		$("#createNote").click(function() {
+			alert("Your note was created!");
+		});
+	</script> 
+  </body>
+</html>

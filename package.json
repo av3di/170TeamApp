@@ -3,18 +3,17 @@
   "description": "Serving static content via html files",
   "version": "0.0.1",
   "author": "CS147 Staff <cs147@cs.stanford.edu>",
-
   "repository": {
-  	"type": "git",
-  	"url": "https://github.com/StanfordHCI/cs147"
+    "type": "git",
+    "url": "https://github.com/StanfordHCI/cs147"
   },
   "license": "MIT",
-
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.12.0",
     "express": "3.x"
   },
   "engines": {
-  	"node": "0.10.x"
+    "node": "0.10.x"
   }
 }
