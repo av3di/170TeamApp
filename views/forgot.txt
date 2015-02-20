@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Password Recovery</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body id="subpage">
+	<div id="header">
+		<img src="images/silLogo.png" />
+	</div>
+	<h1>Password Recovery</h1>
+	<div id="container1">
+		<form action="">
+			<label for="firstname">Email:</label>
+			<input type="text" id="email" name="email" value="">
+			<br>
+			<input id="submit_button" type="submit" value="Reset Password" onclick='alert("we have sent an link to ur email")'>
+			<br>
+			<div id="lx" class="h_links">
+				<a href="index.html">Sign in</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

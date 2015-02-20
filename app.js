@@ -46,6 +46,13 @@ var current_user;
 var current_class_i = 0;
 // Add routes here
 app.get('/', index.view);
+app.post('/', function(req, res) {
+	var new_user = {'username': req.body.username, 'email': req.body.email, 'password': req.body.password, 'notes':[{'class':'', 'note':''}]};
+	current_user = new_user;
+	users[users.length] = new_user;
+	res.render('index', {});
+});
+
 app.get('/project/:id', project.projectInfo);
 app.get('/palette', palette.randomPalette);
 app.get('/user', function(req, res) {
@@ -169,7 +176,15 @@ app.post('/deleteclassm', function(req, res) {
 			'notes': current_user.notes
 	});
 });
-
+app.get('/forgot', function(req, res) {
+	res.render('forgot', {})
+});
+app.get('/tutorial', function(req, res) {
+	res.render('tutorial', {})
+});
+app.get('/signup', function(req, res) {
+	res.render('signup', {})
+});
 // Example route
 // app.get('/userslucy', user.list);
 
