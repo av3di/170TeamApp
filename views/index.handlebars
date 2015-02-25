@@ -12,6 +12,7 @@
 		<img src="../images/silLogo.png" />
 	</div>
 	<h1>Log In</h1>
+	<p id="errormsg"></p>
 	<form id="login" method="post" action="user">
 		<label for="email">Email:</label>
 		<input type="text" id="email" name="email" value="" required>
@@ -30,5 +31,12 @@
 		</div>
 	</div>
 </div>
+<script>
+	var message = document.getElementById("errormsg");
+	if({{error}})
+		message.innerHTML = "Sorry, wrong email and/or password.";
+	else
+		message.innerHTML = "";
+</script>
 </body>
 </html>

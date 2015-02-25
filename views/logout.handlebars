@@ -12,19 +12,23 @@
 		<img src="../images/silLogo.png" />
 	</div>
 	<h1>Log In</h1>
-	<form id="signup" method="post" action="/">
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="username" value="" required>
+	<form id="login" method="post" action="user">
 		<label for="email">Email:</label>
 		<input type="text" id="email" name="email" value="" required>
 		<br>
 		<label for="password">Password:</label>
 		<input type="password" id="password" name="password" value="" required>
-		<label for="conf_password">Confirm Password:</label>
-		<input type="password" name="conf_password" value="" required>
 		<br><br>
-		<input id="userBtn" type="submit" value="Submit">
+		<input id="userBtn" type="submit" value="Go">
 	</form>
+	<div id="outer_links">
+		<div id="ll" class="h_links">
+			<a href="/forgot">Forgot Password?</a>
+		</div>
+		<div id="rl" class="h_links">
+			<a href="/tutorial">First Time Here?</a>
+		</div>
+	</div>
 </div>
 </body>
 </html>
