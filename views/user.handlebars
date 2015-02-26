@@ -130,9 +130,13 @@
 								</div>
 								<div id="collapseOne" class="accordion-body collapse in">
 									<div class="accordion-inner">
-										<form action="/deleteclass" method="post">
-											<input type="text" name="class" />
-											<input type='submit' value='Delete Course'>
+										<form method="post" action="/deleteclass">
+												<select name="class">
+												  {{#each notes}}
+													<option value="{{class}}">{{class}}</option>
+												  {{/each}}
+												</select> 
+											<input type="submit" value="Delete Course">
 										</form>
 									</div>
 								</div>

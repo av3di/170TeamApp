@@ -82,9 +82,13 @@
 								</div>
 								<div id="collapseOne" class="accordion-body collapse in">
 									<div class="accordion-inner">
-										<form action="/deleteclassn" method="post">
-											<input type="text" name="class" />
-											<input type='submit' value='Delete Course'>
+										<form method="post" action="/deleteclassn">
+												<select name="class">
+												  {{#each notes}}
+													<option value="{{class}}">{{class}}</option>
+												  {{/each}}
+												</select> 
+											<input type="submit" value="Delete Course">
 										</form>
 									</div>
 								</div>
@@ -100,7 +104,7 @@
           <!-- right content column-->
           <div class="col-md-7" id="content">
               <div class="panel">
-          <div class="panel-heading" style="background-color:#111;color:#fff;">Quick Add</div>   
+          <div class="panel-heading" style="background-color:#111;color:#fff;">Add Notes</div>   
                 <div class="panel-body">
                   
                   <div class="row">
@@ -116,7 +120,7 @@
 							  {{/each}}
 							</select> 
 						</div>
-						<textarea placeholder="Enter something funny." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; "></textarea>  
+						<textarea placeholder="Enter something funny." id="text" name="text" rows="4" style="overflow: scroll; word-wrap: break-word; resize: none; height: 160px; "></textarea>  
 						<br>
 						<input id="createNote" type="submit" value="Create">
     
@@ -128,7 +132,7 @@
                   <!--/panel-body-->
                 </div><!--/panel-->
 				<div class="panel">
-          <div class="panel-heading" style="background-color:#111;color:#fff;">Quick Add</div>   
+          <div class="panel-heading" style="background-color:#111;color:#fff;">Update Notes</div>   
                 <div class="panel-body">
                   
                   <div class="row">
@@ -144,10 +148,10 @@
 							  {{/each}}
 							</select> 
 						</div>
-						<input id="pullNote" type="submit" value="Pull These Notes">
+						<input id="pullNote" type="submit" value="View Notes To Update">
 					</form>
 					<form method="post" action="/updatenote">
-						<textarea name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; ">{{update_note}}</textarea>  
+						<textarea name="text" rows="4" style="overflow: scroll; word-wrap: break-word; resize: none; height: 160px; ">{{update_note}}</textarea>  
 						<br>
 						<input id="updateNote" type="submit" value="Update">
                     </form>
@@ -176,6 +180,9 @@
 	<script>
 		$("#createNote").click(function() {
 			alert("Your note was created!");
+		});
+		$("#updateNote").click(function() {
+			alert("Your note was updated!");
 		});
 	</script> 
   </body>
