@@ -13,7 +13,7 @@
 -->
 <style>
 body {
-    background: #eee;
+    background: #fff;
 }
 
 #wrapper {
@@ -30,8 +30,7 @@ body {
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
     margin: 5px auto;
-    width: 300px;
-    position: relative;
+    width: 100%;
 }
 
 .box {
@@ -43,13 +42,11 @@ body {
     -webkit-backface-visibility: hidden;
     padding: 25px;
     width: 100%;
-    position: absolute;
-    top: 0;
     border-radius: 5px;
     box-shadow: 0 2px 1px #e9e9e9;
 }
 
-#login input[type="text"], #login input[type="password"], #login button, .back button {
+#signup input[type="text"], #signup input[type="password"], #signup button, .back button {
     outline: none;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -63,26 +60,34 @@ body {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
+	max-width: 500px;
     padding: 20px 25px;
     font-size: 16px;
     margin: 0 0 15px;
     font-family: droid sans;
     border-radius: 5px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#login button, .back button {
+#signup button, .back button {
     background: #3C9FB5;
+
     color: white;
     margin: 0;
     font-size: 24px;
     cursor: pointer;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#login button:hover {
+#signup button:hover {
     background: #9dc2ed;
 }
 
-#login button:active {
+#signup button:active {
     background: #719bcc;
 }
 
@@ -164,7 +169,7 @@ body {
 
 } 
 .forgot a{
-    color: #aaaaaa;
+    color: #3C9FB5;
     text-decoration: none;
 
 }
@@ -182,10 +187,10 @@ body {
 		<input type="text" placeholder="UCSD Email" name="email" />
 		<input type="password" placeholder="Password" name="password" />
 		<input type="password" placeholder=" Confirm Password" />
-		<a href="/">
-		<button id="userBtn" class="login" type="submit">Sign Up</button></a><br><br>
+		
+		<button type="submit">Sign Up</button><br><br>
 		<div class ="forgot">
-			<a href= "/"><h3>Sign In</h3></a>
+			<h3><a href= "/">Back to Sign In</a></h3>
 		</div>
 		<div class ="new">
 		</div>

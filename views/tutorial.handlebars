@@ -13,7 +13,7 @@
 -->
 <style>
 body {
-    background: #eee;
+    background: #fff;
 }
 
 #wrapper {
@@ -30,8 +30,7 @@ body {
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
     margin: 5px auto;
-    width: 300px;
-    position: relative;
+    width: 100%;
 }
 
 .box {
@@ -43,8 +42,6 @@ body {
     -webkit-backface-visibility: hidden;
     padding: 25px;
     width: 100%;
-    position: absolute;
-    top: 0;
     border-radius: 5px;
     box-shadow: 0 2px 1px #e9e9e9;
 }
@@ -56,7 +53,7 @@ body {
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background: #ecf2f4;
+    background: #e8e8e8;
     color: #bbc0c2;
     border: none;
     -webkit-box-sizing: border-box;
@@ -170,10 +167,14 @@ body {
 
 } 
 .forgot a{
-    color: #aaaaaa;
+    color: ##3C9FB5;
     text-decoration: none;
 
 }
+iframe {
+width: 100%;
+max-width: 550px;
+}}
 
 
 
@@ -181,13 +182,14 @@ body {
 
 </style>
 <div id="wrapper">
-    <form id="login" class="front box" method="get" action="/signup" style=" width:550px;" width: 500px; height:500px;>
+    <form id="login" class="front box" method="get" action="/signup">
 		<div class="default"><img src="http://www.icon2s.com/img128/128x128-round-text-edit-note.png"/></i><h1>Watch Tutorial</h1></div>
 		<div style="text-align: center;">
-			<iframe width="420" height="315" src="https://www.youtube.com/embed/eWXOurnVTYg?rel=0" frameborder="0" allowfullscreen></iframe>
+			<iframe height="315" src="https://www.youtube.com/embed/eWXOurnVTYg?rel=0" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div class ="forgot">
-			<a href="/"><h3>Back</h3></a>
+			<h3><a href="/signup">Sign Up</a></h3>
+			<h3><a href="/">Back</a></h3>
 		</div>
 		<div class ="new">
 		</div>

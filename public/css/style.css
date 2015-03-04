@@ -63,8 +63,11 @@ h2
 
 form
 {
-	width: 40%;
-	padding-left: 30% 
+	width: 100%;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+
 }
 
 label
@@ -77,8 +80,47 @@ input
 {
 	width: 100%;
 	margin-bottom: 15px;
-	padding: 8px;
+	padding: 7px;
+	font-size: 16px;
 }
+input#usrBtn 
+{
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	border: 3px solid #74ff9a;
+	border-radius: 15px;
+	font-size: 24px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 15px;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0); /* Set transparent */; 
+}
+input#usrBtn:hover
+{
+	cursor: pointer;
+}
+
+input[type="submit"] 
+{
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	border: 3px solid #74ff9a;
+	border-radius: 15px;
+	font-size: 24px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 15px;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0); /* Set transparent */; 
+}
+
 #submit_button
 {
 	width: 100%;
@@ -99,6 +141,10 @@ input
 #submit_button:hover
 {
 	cursor: pointer;
+}
+iframe {
+width: 100%;
+max-width: 550px;
 }
 
 #sign_Up

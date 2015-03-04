@@ -47,6 +47,62 @@
         border-right: 0;
         border-top: 0;
 }
+
+input[type="text"], textarea {
+    outline: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+	max-width: 900px;
+    padding: 20px 25px;
+    font-size: 16px;
+    margin-top: 15px;
+	margin-bottom: 15px;
+    font-family: droid sans;
+    border-radius: 5px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+input[type="submit"], button, .back button {
+    background: #3C9FB5;
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    cursor: pointer;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+button:hover {
+    background: #9dc2ed;
+}
+
+button:active {
+    background: #719bcc;
+}
+input#classname {
+ padding: 3px;
+}
+
+input#addclass {
+font-size: 14px;
+}
+input#deleteclass {
+font-size: 14px;
+}
 @media (max-width: 992px) {
     body {
         padding-top: 0px;
@@ -132,7 +188,7 @@
 						<li> Add a Class
 							<form action="/addclass" method="post" id="classForm">
 								<input type="text" id="classname" name="class" />
-								<input type='submit' id='btnAdd' value='Add Course'>
+								<input id="addclass" type="submit" value="Add Course">
 							</form>
 						</li>
 						<li>
@@ -142,7 +198,7 @@
 									<option value="{{class}}">{{class}}</option>
 								  {{/each}}
 								</select> 
-								<input type="submit" value="Delete Course">
+								<input id="deleteclass" type="submit" value="Delete Course">
 							</form>
 						</li>
 					</ul>
@@ -152,55 +208,50 @@
     <div id="main-wrapper" class="col-md-11 pull-right">
 		
 		<div id="txt">
-			<form id="paper" method="post" action="/addnote">
+			
 				<div id="main">
 					<div class="page-header">
+					<form id="paper" method="post" action="/addnote">
 						<h3><div id="margin" style ="color: #696969">
 						<div id="margin">Class Name:  
 							<select name="class">
 							  {{#each notes}}
 								<option value="{{class}}">{{class}}</option>
 							  {{/each}}
-							</select> 
+							</select></h3> 
 						</div> 
+						
 					</div>
-				</div>
-				<textarea placeholder="Add notes." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 255px; width:500px; float: center;"; ></textarea>  
+					
+				
+				<textarea placeholder="Add notes." id="text" name="text" rows="4" style="word-wrap: break-word; height: 255px;"; ></textarea>  
 				<br>
-				<input id="button" style="background-color:#3C9FB5; color:white; " type="submit" value="Create">   
-			</form>
-		</div>
-		<div class="panel-heading" style="background-color:#111;color:#fff;">Update Notes</div>   
-                <div class="panel-body">
-                  
-                  <div class="row">
-                  <div class="col-md-8">
-                    <div id="wrapper">
-
+				<input id="createNote" type="submit" value="Create">  
+				</form></div>
+			<div style="background-color:#aaaaaa;color:#fff;margin-top:20px;padding:8px;">Update Notes</div>  
                     <form method="post" action="/pullnote">
-						<div id="margin">Class Name to Update Notes:  
+						<div id="margin"><h3 style ="color: #696969; margin-left:15px;">Class Name to Update Notes: 
 							<select name="class">
 							  {{#each notes}}
 								<option value="{{class}}">{{class}}</option>
 							  {{/each}}
-							</select> 
+							</select> </h3>
 						</div>
-						<input id="pullNote" type="submit" value="View Notes To Update">
+						<input type="submit" value="View Notes To Update">
 					</form>
 					<form method="post" action="/updatenote">
-						<textarea name="text" rows="4" style="word-wrap: break-word; height: 255px; width:500px; float:center;";>{{update_note}}</textarea>  
+						<textarea name="text" rows="4" style="word-wrap: break-word; height: 255px;";>{{update_note}}</textarea>  
 						<br>
 						<input id="updateNote" type="submit" value="Update">
                     </form>
-                  </div>
-                  </div>   
-                </div> 
-                  <!--/panel-body-->
-                </div><!--/panel-->
+            </div>  
+</div>
+		</div>
+		
 	</div>
 </div>
 <script>
-		$("#button").click(function() {
+		$("#createNote").click(function() {
 			alert("Your note was created!");
 		});
 		$("#updateNote").click(function() {

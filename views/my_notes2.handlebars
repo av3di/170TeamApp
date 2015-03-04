@@ -121,7 +121,7 @@
 							  {{/each}}
 							</select> 
 						</div>
-						<textarea placeholder="Enter something funny." id="text" name="text" rows="4" style="overflow: scroll; word-wrap: break-word; resize: none; height: 160px; "></textarea>  
+						<textarea placeholder="Add Notes" id="text" name="text" rows="4" style="word-wrap: break-word; width:100%; height: 160px;margin-top:15px;"></textarea>  
 						<br>
 						<input id="createNote" type="submit" value="Create">
     
@@ -151,7 +151,7 @@
 						<input id="pullNote" type="submit" value="View Notes To Update">
 					</form>
 					<form method="post" action="/updatenote">
-						<textarea name="text" rows="4" style="overflow: scroll; word-wrap: break-word; resize: none; height: 160px; ">{{update_note}}</textarea>  
+						<textarea name="text" rows="4" style="word-wrap: break-word; width: 100%; height: 160px;margin-top: 15px;">{{update_note}}</textarea>  
 						<br>
 						<input id="updateNote" type="submit" value="Update">
                     </form>

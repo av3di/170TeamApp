@@ -42,12 +42,10 @@ exports.addnote =  function(req, res) {
 	function afterAdd(err) {
 		if(err) { console.log(err); }
 		console.log("Added a note.");
-		if(random_num > 0.5) {
-			res.render(current_version, {
-			'username': user.current_user.username,
-			'notes': user.current_user.notes
-			});
-		}
+		res.render(current_version, {
+		'username': user.current_user.username,
+		'notes': user.current_user.notes
+		});
 	};
 };
 
