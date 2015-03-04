@@ -1,138 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <title>Template</title>
-    <meta name="generator" content="Bootply" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html>
+
+<head> 
+ {{> tracking_code_script}}
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link href="css/styles2.css" rel="stylesheet">
-  </head>
-  <body>
-<nav class="navbar navbar-static">
-   <div class="container">
+    <style type="text/css">
+            body {
+    padding-top: 50px;
+    overflow: hidden;
+}
+#wrapper {
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: inline-block;
+}
+#main-wrapper {
+    height: 100%;
+    overflow-y: auto;
+    padding: 50px 0 0px 0;
+}
+#main {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    padding: 0 15px;
+}
+#sidebar-wrapper {
+    height: 100%;
+    padding: 50px 0 0px 0;
+    position: fixed;
+    border-right: 1px solid gray;
+
+}
+#sidebar {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+}
+#sidebar .list-group-item {
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+}
+@media (max-width: 992px) {
+    body {
+        padding-top: 0px;
+    }
+}
+@media (min-width: 992px) {
+    #main-wrapper {
+        float:right;
+    }
+}
+@media (max-width: 992px) {
+    #main-wrapper {
+        padding-top: 0px;
+    }
+}
+@media (max-width: 992px) {
+    #sidebar-wrapper {
+        position: static;
+        height:auto;
+        max-height: 300px;
+        border-right:0;
+    }
+
+
+}
+</style>
+</head>
+<body>
+<div id="header" class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/user"><b>Notas</b></a>
-      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="glyphicon glyphicon-chevron-down"></span>
-      </a>
-    </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">  
-          <li><a href="/user">Home</a></li>
-          <li><a href="#">My Notes</a></li>
-		  <li><a href="/logout">Log Out</a></li>
-      </div>
-    </div>
-</nav><!-- /.navbar -->
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <i class="icon-reorder"></i>
+        </button>
+        <a class="navbar-brand" href="/user"><img src="http://www.icon2s.com/img32/32x32-round-text-edit-note.png"/>
+            Notas
+        </a>
 
-<header class="masthead">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1><a href="#" title="Scroll down for your viewing pleasure">Notes</a></h1>
-      </div>
-    </div>
-  </div>
-</header>
 
-<!-- Begin Body -->
-<div class="container">
-  <div class="no-gutter row">
-          <!-- left side column -->
-        <div class="col-md-2">
-                <div class="panel panel-default" id="sidebar">
-                <div class="panel-heading" style="background-color:#888;color:#fff;">My classes</div> 
-                <div class="panel-body">
-            <ul class="nav nav-stacked">
-			{{#each notes}}
-                    <li><a href="#">{{class}}</a></li>
-			{{/each}}
+
+    </div>
+    <nav class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/my_notes">My Notes</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Print Notes</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/tutorial">Help</a>
+            </li>
         </ul>
-		<div class="accordion" id="accordion2">
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-									  <br>
-									  Add Course...
-									</a>
-								</div>
-								<div id="collapseOne" class="accordion-body collapse in">
-									<div class="accordion-inner">
-										<form action="/addclassn" method="post" id="classForm">
-											<input type="text" id="classname" name="class" />
-											<input type='submit' id='btnAdd' value='Add Course'>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div><!--/acc-->
-						<div class="accordion" id="accordion3">
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-									  <br>
-									  Delete A Course...
-									</a>
-								</div>
-								<div id="collapseOne" class="accordion-body collapse in">
-									<div class="accordion-inner">
-										<form method="post" action="/deleteclassn">
-												<select name="class">
-												  {{#each notes}}
-													<option value="{{class}}">{{class}}</option>
-												  {{/each}}
-												</select> 
-											<input type="submit" value="Delete Course">
-										</form>
-									</div>
-								</div>
-							</div>
-						</div><!--/acc-->               
-                </div><!--/panel body-->
-              </div><!--/panel-->
-          </div><!--/end left column-->
-            
-
-
-
-          <!-- right content column-->
-          <div class="col-md-7" id="content">
-              <div class="panel">
-          <div class="panel-heading" style="background-color:#111;color:#fff;">Add Notes</div>   
-                <div class="panel-body">
-                  
-                  <div class="row">
-                  <div class="col-md-8">
-                    <div id="wrapper">
-
-                    <form id="paper" method="post" action="/addnote">
-
+        <ul class="nav navbar-nav pull-right">
+            <li class="dropdown">
+                <a href="/user" id="nbAcctDD" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user" ></i>{{username}}<i class="icon-sort-down"></i></a>
+                <ul class="dropdown-menu pull-right">
+                    <li><a href="/index">Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div id="wrapper">
+    <div id="sidebar-wrapper" class="col-md-1">
+        <div id="sidebar">
+                <ul class="nav list-group">
+                    <li>
+                        <a class="list-group-item" href="/my_notes"><i class="icon-home icon-1x"></i>My Notes</a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Search Notes</a>
+                    </li>
+                    <li>
+                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Shared Notes</a>
+                    </li>
+					<ul class="nav nav-stacked">
+							{{#each notes}}
+							<li><a href="#">{{class}}</a></li>
+							{{/each}}
+						<li> Add a Class
+							<form action="/addclass" method="post" id="classForm">
+								<input type="text" id="classname" name="class" />
+								<input type='submit' id='btnAdd' value='Add Course'>
+							</form>
+						</li>
+						<li>
+							<form method="post" action="/deleteclass">
+								<select name="class">
+								  {{#each notes}}
+									<option value="{{class}}">{{class}}</option>
+								  {{/each}}
+								</select> 
+								<input type="submit" value="Delete Course">
+							</form>
+						</li>
+					</ul>
+                </ul>
+        </div>
+    </div>
+    <div id="main-wrapper" class="col-md-11 pull-right">
+		
+		<div id="txt">
+			<form id="paper" method="post" action="/addnote">
+				<div id="main">
+					<div class="page-header">
+						<h3><div id="margin" style ="color: #696969">
 						<div id="margin">Class Name:  
 							<select name="class">
 							  {{#each notes}}
 								<option value="{{class}}">{{class}}</option>
 							  {{/each}}
 							</select> 
-						</div>
-						<textarea placeholder="Enter something funny." id="text" name="text" rows="4" style="overflow: scroll; word-wrap: break-word; resize: none; height: 160px; "></textarea>  
-						<br>
-						<input id="createNote" type="submit" value="Create">
-    
-                    </form>
-
-                  </div>
-                  </div>   
-                </div> 
-                  <!--/panel-body-->
-                </div><!--/panel-->
-				<div class="panel">
-          <div class="panel-heading" style="background-color:#111;color:#fff;">Update Notes</div>   
+						</div> 
+					</div>
+				</div>
+				<textarea placeholder="Add notes." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 255px; width:500px; float: center;"; ></textarea>  
+				<br>
+				<input id="button" style="background-color:#3C9FB5; color:white; " type="submit" value="Create">   
+			</form>
+		</div>
+		<div class="panel-heading" style="background-color:#111;color:#fff;">Update Notes</div>   
                 <div class="panel-body">
                   
                   <div class="row">
@@ -140,7 +178,6 @@
                     <div id="wrapper">
 
                     <form method="post" action="/pullnote">
-
 						<div id="margin">Class Name to Update Notes:  
 							<select name="class">
 							  {{#each notes}}
@@ -151,7 +188,7 @@
 						<input id="pullNote" type="submit" value="View Notes To Update">
 					</form>
 					<form method="post" action="/updatenote">
-						<textarea name="text" rows="4" style="overflow: scroll; word-wrap: break-word; resize: none; height: 160px; ">{{update_note}}</textarea>  
+						<textarea name="text" rows="4" style="word-wrap: break-word; height: 255px; width:500px; float:center;";>{{update_note}}</textarea>  
 						<br>
 						<input id="updateNote" type="submit" value="Update">
                     </form>
@@ -160,30 +197,15 @@
                 </div> 
                   <!--/panel-body-->
                 </div><!--/panel-->
-                <!--/end right column-->
-        </div> 
-    </div>
+	</div>
 </div>
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-right"><h5>Notas</h5></div>
-    </div>
-  </div>
-</footer>
-
-
-  <!-- script references -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-	<script>
-		$("#createNote").click(function() {
+<script>
+		$("#button").click(function() {
 			alert("Your note was created!");
 		});
 		$("#updateNote").click(function() {
 			alert("Your note was updated!");
 		});
-	</script> 
-  </body>
+	</script>
+</body>
 </html>

@@ -71,7 +71,14 @@ app.get('/tutorial', function(req, res) {
 	res.render('tutorial', {})
 });
 app.get('/signup', function(req, res) {
-	res.render('signup', {})
+		var random_num = Math.random();
+	if(random_num > 0.5) {
+		res.render('signup', {});
+	}
+	else {
+		res.render('signup', {});
+	}
+	res.render('signup2', {})
 });
 app.get('/logout', logout.view);
 // Example route

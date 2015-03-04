@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>The App</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+	 {{> tracking_code_script}}
+</head>
+<body>
+<div id="page">
+	<div id="header">
+		<img src="../images/silLogo.png" />
+	</div>
+	<h1>Log In</h1>
+	<p id="errormsg"></p>
+	<form id="login" method="post" action="user">
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email" value="" required>
+		<br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" value="" required>
+		<br><br>
+		<input id="userBtn" type="submit" value="Go">
+	</form>
+	<div id="outer_links">
+		<div id="ll" class="h_links">
+			<a href="/forgot">Forgot Password?</a>
+		</div>
+		<div id="rl" class="h_links">
+			<a href="/tutorial">First Time Here?</a>
+		</div>
+	</div>
+</div>
+<script>
+	var message = document.getElementById("errormsg");
+	if({{error}})
+		message.innerHTML = "Sorry, wrong email and/or password.";
+	else
+		message.innerHTML = "";
+</script>
+</body>
+</html>

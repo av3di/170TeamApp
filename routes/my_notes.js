@@ -1,11 +1,23 @@
 var user = require('./user.js');
 var models = require('../models');
 
+var current_version = "my_notes";
+
 exports.viewnotes = function(req, res) {
 	console.log("User is " + user.current_user.username);
-  	res.render('my_notes', {
-		'notes': user.current_user.notes
-	});
+	var random_num = Math.random();
+	if(random_num > 0.5) {
+		current_version = "my_notes";
+		res.render('my_notes', {
+			'notes': user.current_user.notes
+		});
+	}
+	else {
+		current_version = "my_notes2";
+		res.render('my_notes2', {
+			'notes': user.current_user.notes
+		});
+	}
 };
 
 exports.addnote =  function(req, res) {
@@ -30,10 +42,12 @@ exports.addnote =  function(req, res) {
 	function afterAdd(err) {
 		if(err) { console.log(err); }
 		console.log("Added a note.");
-		res.render('my_notes', {
-				'username': user.current_user.username,
-				'notes': user.current_user.notes
-		});
+		if(random_num > 0.5) {
+			res.render(current_version, {
+			'username': user.current_user.username,
+			'notes': user.current_user.notes
+			});
+		}
 	};
 };
 
@@ -47,7 +61,7 @@ exports.pullnote = function(req, res) {
 		}
 		user.current_class_i++;
 	}
-	res.render('my_notes', {
+	res.render(current_version, {
 			'username': user.current_user.username,
 			'notes': user.current_user.notes,
 			'update_note': user.current_user.notes[user.current_class_i].note
@@ -64,7 +78,7 @@ exports.updatenote = function(req, res) {
 	function afterAdd(err) {
 		if(err) { console.log(err); }
 		console.log("Added a note.");
-		res.render('my_notes', {
+		res.render(current_version, {
 		'username': user.current_user.username,
 		'notes': user.current_user.notes,
 		'update_note': user.current_user.notes[user.current_class_i].note
