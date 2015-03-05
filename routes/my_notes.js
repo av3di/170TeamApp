@@ -83,4 +83,35 @@ exports.updatenote = function(req, res) {
 		});
 
 	};
+};
+
+exports.viewall = function(req, res) {
+	console.log("Looking for notes for " + req.params.classname + "...");
+	var new_notes = {};
+	models.User.find({"notes.class": req.params.classname}).exec(afterfind);
+	function afterfind(err, q_user) {
+		if(err) { console.log(err); }
+		console.log("Gathering all notes.");
+		var new_i = 0;
+		var i = 0;
+		while(i < q_user.length)
+		{
+			var j = 0; 
+			while(j < q_user[i].notes.length)
+			{
+				if(q_user[i].notes[j].class == req.params.classname)
+				{
+					new_notes[new_i] = {"class": req.params.classname, "note": q_user[i].notes[j].note};
+					new_i++;
+					break;
+				}
+				j++;
+			}
+			i++;
+		}
+		res.render("class", {
+		'username': user.current_user.username,
+		'notes': new_notes
+		});
+	};
 }

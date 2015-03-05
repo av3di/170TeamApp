@@ -83,7 +83,7 @@ app.get('/signup', function(req, res) {
 app.get('/logout', logout.view);
 // Example route
 // app.get('/userslucy', user.list);
-
+app.get('/class/:classname', my_notes.viewall);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
