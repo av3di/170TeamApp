@@ -123,7 +123,7 @@
 						</div>
 						<textarea placeholder="Add Notes" id="text" name="text" rows="4" style="word-wrap: break-word; width:100%; height: 160px;margin-top:15px;"></textarea>  
 						<br>
-						<input id="createNote" type="submit" value="Create">
+						<input id="createNote" class="version_b" type="submit" value="Create">
     
                     </form>
 
@@ -184,6 +184,17 @@
 		$("#updateNote").click(function() {
 			alert("Your note was updated!");
 		});
+
+    
+  $(".version_b").click(function(){
+    //add your Woopra tracking code for version A's like button click event
+  
+    woopra.track("version_b_create_note");
+
+  })
+
+
+    
 	</script> 
   </body>
 </html>
