@@ -250,23 +250,26 @@ font-size: 14px;
 		
 	</div>
 </div>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 <script>
+
 		$("#createNote").click(function() {
 			alert("Your note was created!");
 		});
+
 		$("#updateNote").click(function() {
 			alert("Your note was updated!");
 		});
 
 
+        
         $(".version_a").click(function(){
         //add your Woopra tracking code for version A's like button click event
 
         woopra.track("version_a_create_note");
-
-
-
-  })
+        })
 
 
 

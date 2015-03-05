@@ -185,16 +185,13 @@
 			alert("Your note was updated!");
 		});
 
-    
-  $(".version_b").click(function(){
-    //add your Woopra tracking code for version A's like button click event
-  
-    woopra.track("version_b_create_note");
+          $(".version_b").click(function(){
+        //add your Woopra tracking code for version A's like button click event
 
+        woopra.track("version_a_create_note");
   })
 
 
-    
 	</script> 
   </body>
 </html>

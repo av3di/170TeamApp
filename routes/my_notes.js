@@ -119,23 +119,3 @@ exports.viewall = function(req, res) {
 
 
 
-
-
-
-  $(".version_a").click(function(){
-    //add your Woopra tracking code for version A's like button click event
-
-    woopra.track("version_a_tutorial");
-
-
-
-  })
-
-  $(".version_b").click(function(){
-    //add your Woopra tracking code for version A's like button click event
-  
-    woopra.track("version_b_help");
-
-  })
-
-
