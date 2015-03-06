@@ -254,7 +254,7 @@ body {
 
 		<button class="login" id="userBtn" type="submit"><a href="/user">Sign In</button></a><br><br>
 		<div class ="forgot">
-			<a href= "/forgot"><h3>Forgot Password?</h3></a>
+			<a id="help2" href= "/forgot"><h3>Forgot Password?</h3></a>
 		</div>
 		<div class ="new">
 			<a href= "/signup"><h3>Create Account</h3></a>
@@ -262,6 +262,7 @@ body {
 	</form>
 </div>
 <script>
+
 	var message = document.getElementById("errormsg");
 	if({{error}})
 		message.innerHTML = "Sorry, wrong email and/or password.";

@@ -155,7 +155,7 @@ font-size: 14px;
                 </ul>
             </li>
             <li>
-                <a href="/tutorial">Help</a>
+                <a id="help2" href="/tutorial">Help</a>
             </li>
         </ul>
         <ul class="nav navbar-nav pull-right">
@@ -256,6 +256,12 @@ font-size: 14px;
     <script src="/js/introHCI.js"></script>
 <script>
         
+
+        $("#help2").click(function() {
+            
+            woopra.track("version_a_tutorial");
+
+        });        
 
 
 

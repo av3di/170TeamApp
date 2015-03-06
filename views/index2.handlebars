@@ -28,11 +28,20 @@
 			<a href="/forgot">Forgot Password?</a>
 		</div>
 		<div id="rl" class="h_links">
-			<a href="/tutorial">First Time Here?</a>
+			<a id= "help1" href="/tutorial">First Time Here?</a>
 		</div>
 	</div>
 </div>
 <script>
+
+	$("#help1").click(function() {
+    
+      woopra.track("version_b_help");
+    
+    });
+
+
+
 	var message = document.getElementById("errormsg");
 	if({{error}})
 		message.innerHTML = "Sorry, wrong email and/or password.";
