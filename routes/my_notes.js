@@ -52,16 +52,20 @@ exports.addnote =  function(req, res) {
 
 exports.pullnote = function(req, res) {
 	user.current_class_i = 0;
+	console.log("Looking for notes for " + req.params.class);
 	while(user.current_class_i < user.current_user.notes.length)
 	{
-		if(req.body.class == user.current_user.notes[user.current_class_i].class)
+		if(req.params.class == user.current_user.notes[user.current_class_i].class)
 		{
 			break;
 		}
 		user.current_class_i++;
 	}
-	res.render(current_version, {
+	console.log("Found class at " + user.current_class_i);
+	console.log("Out of " + user.current_user.notes.length);
+	res.render("edit_note", {
 			'username': user.current_user.username,
+			'class': req.params.class,
 			'notes': user.current_user.notes,
 			'update_note': user.current_user.notes[user.current_class_i].note
 	});
@@ -77,10 +81,9 @@ exports.updatenote = function(req, res) {
 	function afterAdd(err) {
 		if(err) { console.log(err); }
 		console.log("Added a note.");
-		res.render(current_version, {
+		res.render("my_notes", {
 		'username': user.current_user.username,
-		'notes': user.current_user.notes,
-		'update_note': user.current_user.notes[user.current_class_i].note
+		'notes': user.current_user.notes
 		});
 
 	};

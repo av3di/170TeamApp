@@ -58,7 +58,6 @@ app.get('/user', user.viewuser);
 app.post('/user', user.finduser);
 app.get('/my_notes', my_notes.viewnotes);
 app.post('/addnote', my_notes.addnote);
-app.post('/pullnote', my_notes.pullnote);
 app.post('/updatenote', my_notes.updatenote);
 app.post('/addclass', user.addclass);
 app.post('/deleteclass', user.deleteclass);
@@ -80,6 +79,7 @@ app.get('/signup', function(req, res) {
 	}
 	res.render('signup2', {})
 });
+app.get('/edit_note/:class', my_notes.pullnote);
 app.get('/logout', logout.view);
 // Example route
 // app.get('/userslucy', user.list);
