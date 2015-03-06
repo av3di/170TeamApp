@@ -63,12 +63,15 @@ app.post('/addclass', user.addclass);
 app.post('/deleteclass', user.deleteclass);
 app.post('/addclassn', user.addclassn);
 app.post('/deleteclassn', user.deleteclassn);
+
 app.get('/forgot', function(req, res) {
 	res.render('forgot', {})
 });
+
 app.get('/tutorial', function(req, res) {
 	res.render('tutorial', {})
 });
+
 app.get('/signup', function(req, res) {
 		var random_num = Math.random();
 	if(random_num > 0.5) {
