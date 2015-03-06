@@ -28,19 +28,16 @@
 			<a href="/forgot">Forgot Password?</a>
 		</div>
 		<div id="rl" class="h_links">
-			<a id = "help1" href="/tutorial">First Time Here?</a>
+			<a href="/tutorial">First Time Here?</a>
 		</div>
 	</div>
 </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="/js/introHCI.js"></script>
 <script>
-
-	$("#help1").click(function() {
-    
-      woopra.track("version_b_help");
-    
-    });
-
-
 
 	var message = document.getElementById("errormsg");
 	if({{error}})
