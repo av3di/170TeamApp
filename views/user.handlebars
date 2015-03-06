@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
+		<meta name="viewport" content="width=device-width, initiail-scale=1">
+
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>Template</title>
@@ -12,22 +15,84 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles2.css" rel="stylesheet">
+
+		<style>
+
+			.row{
+				padding-left: 10%;
+				padding-right: 10%;
+			}
+
+			.panel-heading{
+				width: 100%;
+			}
+
+			.panel-body{
+				width: 100%;
+			}
+
+			.col-md-2{
+				width: 100%;
+				height: 75%;
+			}
+
+
+			.navbar{
+				width: 100%;
+			}
+
+
+			.navbar-main{
+				text-align: center;
+				float: left;
+				font-size: 20px;
+				width: 25%;
+	
+			}
+
+			.navbar-top{
+				text-align: center;
+				float: left;
+				width: 25%;
+			
+				font-size: 20px;
+				margin-top: 2px;
+				
+			}	
+
+			.navbar-top2{
+				text-align: center;
+				float: left;
+				width: 25%;
+				margin-top: 10%;
+				font-size: 20px;
+				margin-top: 2px;
+				
+			}	
+
+
+
+		</style>
+
+
+
+
+
 	</head>
 	<body>
+
 <nav class="navbar navbar-static">
    <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/user"><b>Notas</b></a>
-   <!--   <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="glyphicon glyphicon-chevron-down"></span>
-      </a>
-    </div>
-      <div class="navbar-collapse collapse">-->
-        <ul class="nav navbar-nav">  
-          <li><a href="#">Home</a></li>
-          <li><a href="/my_notes">My Notes</a></li>
-		  <li><a href="/logout">Log Out</a></li>
-		 </ul>
+      <a class="navbar-main" href="/user"><img src="http://www.icon2s.com/img32/32x32-round-text-edit-note.png">Notas</a>
+      
+      <a class="navbar-top" href="/my_notes">My Notes</a>
+      
+      <a class="navbar-top2" href="/tutorial>">Help</a>
+
+	  <a class="navbar-top" href="/logout">Log Out</a>
+	  <br>
+	  <hr style="border:solid 1px #888" width="100%">
           
       <!--
           <li class="dropdown">
@@ -73,7 +138,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h1><a href="#" title="Scroll down for your viewing pleasure">Welcome, {{username}}</a>
+        <h1><a href="#" >{{username}}</a>
           <p class="lead">Your Notes Await</p></h1>
       </div>
 
@@ -107,7 +172,9 @@
 								<div id="collapseOne" class="accordion-body collapse in">
 									<div class="accordion-inner">
 										<form action="/addclass" method="post" id="classForm">
-											<input type="text" id="classname" name="class" />
+
+											<input style="width:100%; font-size:20" type="text" id="classname" name="class" />
+											<br>
 											<input type='submit' id='btnAdd' value='Add Course'>
 										</form>
 									</div>
@@ -125,11 +192,12 @@
 								<div id="collapseOne" class="accordion-body collapse in">
 									<div class="accordion-inner">
 										<form method="post" action="/deleteclass">
-												<select name="class">
+												<select style="width: 100%; font-size: 20px" name="class">
 												  {{#each notes}}
 													<option value="{{class}}">{{class}}</option>
 												  {{/each}}
 												</select> 
+												<br>
 											<input type="submit" value="Delete Course">
 										</form>
 									</div>
@@ -141,39 +209,8 @@
       		</div><!--/end left column-->
       			
 
-      		
-      		<!-- right content column-->
-      		<div class="col-md-7" id="content">
-            	<div class="panel">
-					<div class="panel-heading" style="background-color:#111;color:#fff;">My Recent Notes</div>   
-					<div class="panel-body">
-					  {{#each notes}}
-						<div class="row">
-							  <div class="col-md-8">
-								<h2>{{class}}</h2>
-								  {{note}}
-								<!--<br><br>
-								<button class="btn btn-default">Go</button> -->
-							  </div> 
-						  
-						</div>
-					  {{/each}} 
-					
-
-					  
-					</div><!--/panel-body-->
-                </div><!--/panel-->
-              	<!--/end right column-->
-			</div> 
   	</div> <!-- end gutter row -->
 </div> <!-- end container -->
-<footer>
-  <div class="container">
-  	<div class="row">
-      <div class="col-md-12 text-right"><h5>Notas</h5></div>
-    </div>
-  </div>
-</footer>
 
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
@@ -181,3 +218,10 @@
 		<script src="js/scripts.js"></script>
 	</body>
 </html>
+
+
+
+
+
+
+
