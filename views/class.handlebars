@@ -1,189 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
 
-<head> 
- {{> tracking_code_script}}
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-            body {
-    padding-top: 50px;
-    overflow: hidden;
-}
-#wrapper {
-    min-height: 100%;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    display: inline-block;
-}
-#main-wrapper {
-    height: 100%;
-    overflow-y: auto;
-    padding: 50px 0 0px 0;
-}
-#main {
-    position: relative;
-    height: 100%;
-    overflow-y: auto;
-    padding: 0 15px;
-}
-#sidebar-wrapper {
-    height: 100%;
-    padding: 50px 0 0px 0;
-    position: fixed;
-    border-right: 1px solid gray;
+        <meta name="viewport" content="width=device-width, initiail-scale=1">
 
-}
-#sidebar {
-    position: relative;
-    height: 100%;
-    overflow-y: auto;
-}
-#sidebar .list-group-item {
-        border-radius: 0;
-        border-left: 0;
-        border-right: 0;
-        border-top: 0;
-}
-@media (max-width: 992px) {
-    body {
-        padding-top: 0px;
-    }
-}
-@media (min-width: 992px) {
-    #main-wrapper {
-        float:right;
-    }
-}
-@media (max-width: 992px) {
-    #main-wrapper {
-        padding-top: 0px;
-    }
-}
-@media (max-width: 992px) {
-    #sidebar-wrapper {
-        position: static;
-        height:auto;
-        max-height: 300px;
-        border-right:0;
-    }
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Template</title>
+        <meta name="generator" content="Bootply" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="css/styles2.css" rel="stylesheet">
+
+        <style>
+
+            .row{
+                width: 100%;
+                padding-left: 1%;
+                padding-right: 1%;
+                box-sizing: border-box;
+                -webkit-box-sizing:border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing:border-box;
+                -moz-box-sizing:border-box;
+            }
 
 
-}
-</style>
-</head>
-<body>
-<div id="header" class="navbar navbar-default navbar-fixed-top">
+            .panel-heading{
+                width: 100%;
+                padding-top: 1%;
+                padding-bottom: 1%;
+                padding-left: 2%;
+                font-size: 25px;
+                box-sizing: border-box;
+                -webkit-box-sizing:border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing:border-box;
+                -moz-box-sizing:border-box;
+            }
+
+            .panel-body{
+                width: 98%;
+                margin-left: 2%
+            }
+
+            .col-md-2{
+                width: 100%;
+                height: 75%;
+            }
+
+
+            .navbar{
+                width: 100%;
+            }
+
+
+            .navbar-main{
+                text-align: center;
+                float: left;
+                font-size: 20px;
+                width: 25%;
+    
+            }
+
+            .navbar-top{
+                text-align: center;
+                float: left;
+                width: 25%;
+            
+                font-size: 20px;
+                margin-top: 2px;
+                
+            }   
+
+            .navbar-top2{
+                text-align: center;
+                float: left;
+                width: 25%;
+                margin-top: 10%;
+                font-size: 20px;
+                margin-top: 2px;
+                
+            }   
+
+
+
+        </style>
+
+
+
+
+
+    </head>
+    <body>
+
+<nav class="navbar navbar-static">
+   <div class="container">
     <div class="navbar-header">
-        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-            <i class="icon-reorder"></i>
-        </button>
-        <a class="navbar-brand" href="/user"><img src="http://www.icon2s.com/img32/32x32-round-text-edit-note.png"/>
-            Notas
-        </a>
+      <a class="navbar-main" href="/user"><img src="http://www.icon2s.com/img32/32x32-round-text-edit-note.png">Notas</a>
+      
+      <a class="navbar-top" href="/my_notes">My Notes</a>
+      
+      <a class="navbar-top2" href="/tutorial>">Help</a>
 
-
-
-    </div>
-    <nav class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-            <li>
-                <a href="/my_notes">My Notes</a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Print Notes</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="/tutorial">Help</a>
-            </li>
+      <a class="navbar-top" href="/logout">Log Out</a>
+      <br>
+      <hr style="border:solid 1px #888" width="100%">
+          
+      <!--
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classes</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Sub-link</a></li>
+              <li><a href="#">Sub-link</a></li>
+              <li><a href="#">Sub-link</a></li>
+              <li><a href="#">Sub-link</a></li>
+              
+            </ul>
+          </li>
         </ul>
-        <ul class="nav navbar-nav pull-right">
-            <li class="dropdown">
-                <a href="/user" id="nbAcctDD" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user" ></i>{{username}}<i class="icon-sort-down"></i></a>
-                <ul class="dropdown-menu pull-right">
-                    <li><a href="/index">Log Out</a></li>
-                </ul>
-            </li>
+
+        <ul class="nav navbar-right navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+            <ul class="dropdown-menu" style="padding:12px;">
+                <form class="form-inline">
+                    <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+                </form>
+             </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Logout</a></li>
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">About</a></li>
+             </ul>
+          </li>
         </ul>
-    </nav>
-</div>
-<div id="wrapper">
-    <div id="sidebar-wrapper" class="col-md-1">
-        <div id="sidebar">
-                <ul class="nav list-group">
-                    <li>
-                        <a class="list-group-item" href="/my_notes"><i class="icon-home icon-1x"></i>My Notes</a>
-                    </li>
-                    <li>
-                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Search Notes</a>
-                    </li>
-                    <li>
-                        <a class="list-group-item" href="#"><i class="icon-home icon-1x"></i>Shared Notes</a>
-                    </li>
-					<ul class="nav nav-stacked">
-							{{#each notes}}
-							<li><a href="#">{{class}}</a></li>
-							{{/each}}
-						<li> Add a Class
-							<form action="/addclass" method="post" id="classForm">
-								<input type="text" id="classname" name="class" />
-								<input id="addclass" type="submit" value="Add Course">
-							</form>
-						</li>
-						<li>
-							<form method="post" action="/deleteclass">
-								<select name="class">
-								  {{#each notes}}
-									<option value="{{class}}">{{class}}</option>
-								  {{/each}}
-								</select> 
-								<input id="deleteclass" type="submit" value="Delete Course">
-							</form>
-						</li>
-					</ul>
-                </ul>
-        </div>
+          
+      -->
+
+
+      </div>
     </div>
-    <div id="main-wrapper" class="col-md-11 pull-right">
-		<div id="txt">
-				<div id="main">
-					<div class="page-header">
-					{{#if notes}}
-						{{#each notes}}
-							<h3><div id="margin" style ="color: #696969">
-							<div id="margin">Class Name: {{class}}
-								  
-							</div>
-							
-						</div> </h3> 
-					<br>
-					<p>{{note}}</p><br><br>
-					{{/each}}
-					{{else}}
-					<h3><div id="margin" style ="color: #696969">
-							<div id="margin">Sorry, no notes are available for this class.
-								  
-							</div>
-							
-						</div> </h3> 
-						{{/if}}
-</div>
-		</div>
-		
-	</div>
-</div>
-<script>
-		$("#createNote").click(function() {
-			alert("Your note was created!");
-		});
-		$("#updateNote").click(function() {
-			alert("Your note was updated!");
-		});
-	</script>
-</body>
+</nav><!-- /.navbar -->
+
+<header class="masthead">
+  <div class="container">
+  </div>
+</header>
+
+<!-- Begin Body -->
+<div class="container">
+    <div class="no-gutter row">
+            <!-- left side column -->
+            <div class="col-md-2">
+                <div class="panel panel-default" id="sidebar">
+                    <div class="panel-heading" style="background-color:#888;color:#fff;">Classmates' Notes</div> 
+                    <div class="panel-body">
+                            
+                            {{#if notes}}
+                        {{#each notes}}
+                            <h3><div id="margin" style ="color: #696969">
+                            <div id="margin">Class Name: {{class}}
+                                  
+                            </div>
+                            
+                        </div> </h3> 
+                    
+                    <p>{{note}}</p>
+                    <hr style="border: solid 1px #888;" width="100%">
+                    {{/each}}
+                    {{else}}
+                    <h3><div id="margin" style ="color: #696969">
+                            <div id="margin">Sorry, no notes are available for this class.
+                                  
+                            </div>
+                            
+                        </div> </h3> 
+                        {{/if}}
+                    </div><!--/acc-->
+                    </div><!--/panel body-->
+                </div><!--/panel-->
+            </div><!--/end left column-->
+                
+
+    </div> <!-- end gutter row -->
+</div> <!-- end container -->
+
+    <!-- script references -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
 </html>

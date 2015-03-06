@@ -5,15 +5,21 @@
 <!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 10)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    
+     {{> tracking_code_script}}
+     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!--@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 @import url(http://fonts.googleapis.com/css?family=Cabin:700);
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 -->
 <style>
+
+html{
+    background-color: #fff;
+}
+
 body {
-    background: #eee;
+    background-color: #fff;
 }
 
 #wrapper {
@@ -29,8 +35,8 @@ body {
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    margin: 5px auto;
-    width: 300px;
+    width: 100%;
+    height: 100%;
     position: relative;
 }
 
@@ -41,8 +47,8 @@ body {
       box-sizing: border-box;
     -webkit-transform-style: preserve-3d;
     -webkit-backface-visibility: hidden;
-    padding: 25px;
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     border-radius: 5px;
@@ -56,24 +62,30 @@ body {
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background: #ecf2f4;
+    background: #e8e8e8;
     color: #bbc0c2;
     border: none;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
-    padding: 20px 25px;
-    font-size: 16px;
-    margin: 0 0 15px;
+    max-width: 500px;
+    padding: 4%;
+    font-size: 24px;
     font-family: droid sans;
     border-radius: 5px;
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right:auto;
 }
 
 #login button, .back button {
     background: #3C9FB5;
     color: white;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 24px;
     cursor: pointer;
 }
@@ -127,7 +139,8 @@ body {
 
 .default {
     text-align: center;
-    margin: 25px 0;
+    margin-left: 17%;
+    margin-right: 17%;
 }
 
 .default i {
@@ -143,6 +156,7 @@ body {
     margin: 0;
     color: #aaaaaa;
 }
+
 
 .forgot h3{
     font-family: Cabin;
@@ -163,6 +177,19 @@ body {
     text-decoration: none;
 
 } 
+
+h3 {
+display: block;
+font-size: 1.17em;
+-webkit-margin-before: 1px;
+-webkit-margin-after: 1px;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+}
+
+
+
 .forgot a{
     color: #aaaaaa;
     text-decoration: none;
@@ -235,32 +262,36 @@ body {
     padding: 0 0 15px;
 }
 
+img{
+    width: 100%;
+}
 
 </style>
     
 
 <div id="wrapper">
-	<form id="login" class="front box" method="post" action="user">
-		<div class="default"><img src="http://www.icon2s.com/img256/256x256-round-text-edit-note.png"/></i><h1>Notas</h1></div>
-		<p id="errormsg"></p>
-		<input type="text" placeholder="Email" name="email" />
-		<input type="password" placeholder="Password" name="password"/>
+    <form id="login" class="front box" method="post" action="user">
+        <div class="default"><img src="http://www.icon2s.com/img256/256x256-round-text-edit-note.png"/></i><h1>Notas</h1></div>
+        <p id="errormsg"></p>
+        <input type="text" placeholder="Email" name="email" />
+        <input type="password" placeholder="Password" name="password"/>
 
-		<button class="login" id="userBtn" type="submit"><a href="/">Sign In</button></a><br><br>
-		<div class ="forgot">
-			<a href= "/forgot"><h3>Forgot Password?</h3></a>
-		</div>
-		<div class ="new">
-			<a href= "/signup"><h3>Create Account</h3></a>
-		</div>
-	</form>
+        <button class="login" id="userBtn" type="submit"><a href="/user">Sign In</button></a>
+        <div class ="forgot">
+            <a id="help2" href= "/forgot"><h3>Forgot Password?</h3></a>
+        </div>
+        <div class ="new">
+            <a href= "/signup"><h3>Create Account</h3></a>
+        </div>
+    </form>
 </div>
 <script>
-	var message = document.getElementById("errormsg");
-	if({{error}})
-		message.innerHTML = "Sorry, wrong email and/or password.";
-	else
-		message.innerHTML = "";
+
+    var message = document.getElementById("errormsg");
+    if({{error}})
+        message.innerHTML = "Sorry, wrong email and/or password.";
+    else
+        message.innerHTML = "";
 </script>
 </body>
 </html>
