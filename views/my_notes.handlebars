@@ -255,9 +255,16 @@ font-size: 14px;
     <script src="js/scripts.js"></script>
     <script src="/js/introHCI.js"></script>
 <script>
+        
+
+
 
 		$("#createNote").click(function() {
-			alert("Your note was created!");
+			
+            woopra.track("version_a_create_note");
+
+            alert("Your note was created!");
+
 		});
 
 		$("#updateNote").click(function() {
