@@ -115,7 +115,8 @@ exports.viewall = function(req, res) {
 		}
 		res.render("class", {
 		'username': user.current_user.username,
-		'notes': new_notes
+		'notes': new_notes,
+		'classname': req.params.classname
 		});
 	};
 }

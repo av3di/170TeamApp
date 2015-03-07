@@ -9,22 +9,35 @@
 		<title>Template</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/reset.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles2.css" rel="stylesheet">
 
 		<style>
-
+			h2 {
+			text-align: center;
+			}
+			
 			.row{
-				padding-left: 1%;
-				padding-right: 1%;
+				padding-left: 0px;
+				padding-right: 0px;
 			}
 
 			.panel-heading{
 				width: 100%;
+				background-color:#888;
+				color:#fff;
+				padding: 15px;
+				font-size: 24px;
+				border-bottom: 0px;
+				-webkit-box-sizing:border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing:border-box;
+                -moz-box-sizing:border-box;
 			}
 
 			.panel-body{
@@ -33,7 +46,11 @@
 
 			.col-md-2{
 				width: 100%;
-				height: 75%;
+				padding: 1%;
+				-webkit-box-sizing:border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing:border-box;
+                -moz-box-sizing:border-box;
 			}
 
 
@@ -69,15 +86,66 @@
 				margin-top: 2px;
 				
 			}	
+input[type="text"], input[type="submit"], select,  button, .back button {
+    outline: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: #e8e8e8;
+    color: #3C9FB5; /*#bbc0c2;*/
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+	max-width: 500px;
+    padding: 20px;
+    font-size: 24px;
+    font-family: droid sans;
+    border-radius: 5px;
+	display: block;
+	margin: 25px auto;
+}
 
+input[type="submit"], button, .back button {
+    background: #3C9FB5;
+    color: white;
+    margin-left: auto;
+	margin-right: auto;
+    font-size: 24px;
+    cursor: pointer;
+}
 
+input[type="submit"]:hover, button:hover {
+    background: #9dc2ed;
+}
+
+input[type="submit"]:active, button:active {
+    background: #719bcc;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: translate(120px, 0);
+    -moz-transform: translate(120px, 0);
+    -ms-transform: translate(120px, 0);
+    -o-transform: translate(120px, 0);
+    transform: translate(120px, 0);
+    opacity: 0;
+}
+
+a:hover {
+text-decoration: none;
+color: #9dc2ed;
+}
 
 		</style>
-
-
-
-
-
 	</head>
 	<body>
 
@@ -93,60 +161,10 @@
 	  <a class="navbar-top" href="/logout">Log Out</a>
 	  <br>
 	  <hr style="border:solid 1px #888" width="100%">
-          
-      <!--
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classes</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-              
-            </ul>
-          </li>
-        </ul>
-
-        <ul class="nav navbar-right navbar-nav">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-            <ul class="dropdown-menu" style="padding:12px;">
-                <form class="form-inline">
-     				<button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-                </form>
-             </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Logout</a></li>
-              <li><a href="#">Profile</a></li>
-              <li class="divider"></li>
-              <li><a href="#">About</a></li>
-             </ul>
-          </li>
-        </ul>
-          
-      -->
-
 
       </div>
     </div>
 </nav><!-- /.navbar -->
-
-<header class="masthead">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1><a href="#" >{{username}}</a>
-          <p class="lead">Your Notes Await</p></h1>
-      </div>
-
-
-
-    </div>
-  </div>
-</header>
 
 <!-- Begin Body -->
 <div class="container">
@@ -154,28 +172,23 @@
       		<!-- left side column -->
   			<div class="col-md-2">
               	<div class="panel panel-default" id="sidebar">
-					<div class="panel-heading" style="background-color:#888;color:#fff;">My classes</div> 
+					<div class="panel-heading">My Classes</div> 
 					<div class="panel-body">
 						<ul class="nav nav-stacked">
 							{{#each notes}}
-							<li><a href="my_notes">{{class}}</a></li>
+							<li><a href="my_notes" style="text-align:center;font-size: 24px;">{{class}}</a></li>
 							{{/each}}
 						</ul>
 						<div class="accordion" id="accordion2">
 							<div class="accordion-group">
 								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-									  <br>
-									  Add Course...
-									</a>
+									<h2>Add a Class</h2>
 								</div>
 								<div id="collapseOne" class="accordion-body collapse in">
 									<div class="accordion-inner">
 										<form action="/addclass" method="post" id="classForm">
-
-											<input style="width:100%; font-size:20" type="text" id="classname" name="class" />
-											<br>
-											<input type='submit' id='btnAdd' value='Add Course'>
+											<input type="text" id="classname" name="class" placeholder="Ex. COGS 120"/>
+											<input type='submit' id='btnAdd' value='Add Class'>
 										</form>
 									</div>
 								</div>
@@ -184,21 +197,17 @@
 						<div class="accordion" id="accordion3">
 							<div class="accordion-group">
 								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-									  <br>
-									  Delete A Course...
-									</a>
+									<h2 style="margin-top:45px;">Delete a Class</h2>
 								</div>
 								<div id="collapseOne" class="accordion-body collapse in">
 									<div class="accordion-inner">
 										<form method="post" action="/deleteclass">
-												<select style="width: 100%; font-size: 20px" name="class">
+												<select name="class">
 												  {{#each notes}}
 													<option value="{{class}}">{{class}}</option>
 												  {{/each}}
 												</select> 
-												<br>
-											<input type="submit" value="Delete Course">
+											<input type="submit" value="Delete Class">
 										</form>
 									</div>
 								</div>

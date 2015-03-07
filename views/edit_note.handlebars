@@ -9,45 +9,49 @@
         <title>Template</title>
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/reset.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
         <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <link href="css/styles2.css" rel="stylesheet">
 
         <style>
 
-            .row{
+            h2 {
+			text-align: center;
+			}
+			
+			.row{
+				padding-left: 0px;
+				padding-right: 0px;
+			}
 
-                padding-left: 1%;
-                padding-right: 1%;
-            }
-
-            .panel-heading{
-                font-size: 25px;
-                width: 100%;
-                padding: 10px 15px;
-                border-bottom: 1px solid transparent;
-                border-top-right-radius: 3px;
-                border-top-left-radius: 3px;
-
-                box-sizing: border-box;
-                -webkit-box-sizing:border-box;
+			.panel-heading{
+				width: 100%;
+				background-color:#888;
+				color:#fff;
+				padding: 15px;
+				font-size: 24px;
+				border-bottom: 0px;
+				-webkit-box-sizing:border-box;
                 -o-box-sizing: border-box;
                 -ms-box-sizing:border-box;
                 -moz-box-sizing:border-box;
+			}
 
-            }
+			.panel-body{
+				width: 100%;
+			}
 
-            .panel-body{
-                width: 100%;
-            }
-
-            .col-md-2{
-                width: 100%;
-                height: 75%;
-            }
+			.col-md-2{
+				width: 100%;
+				padding: 1%;
+				-webkit-box-sizing:border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing:border-box;
+                -moz-box-sizing:border-box;
+			}
 
 
             .navbar{
@@ -83,14 +87,65 @@
                 
             }   
 
+input[type="text"], input[type="submit"], select,  button, .back button {
+    outline: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: #e8e8e8;
+    color: #3C9FB5; /*#bbc0c2;*/
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+	max-width: 500px;
+    padding: 20px;
+    font-size: 24px;
+    font-family: droid sans;
+    border-radius: 5px;
+	display: block;
+	margin: 25px auto;
+}
 
+input[type="submit"], button, .back button {
+    background: #3C9FB5;
+    color: white;
+    margin-left: auto;
+	margin-right: auto;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, button:hover {
+    background: #9dc2ed;
+}
+
+input[type="submit"]:active, button:active {
+    background: #719bcc;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: translate(120px, 0);
+    -moz-transform: translate(120px, 0);
+    -ms-transform: translate(120px, 0);
+    -o-transform: translate(120px, 0);
+    transform: translate(120px, 0);
+    opacity: 0;
+}
+a:hover {
+text-decoration: none;
+color: #9dc2ed;
+}
 
         </style>
-
-
-
-
-
     </head>
     <body>
 
@@ -106,103 +161,50 @@
       <a class="navbar-top" href="/logout">Log Out</a>
       <br>
       <hr style="border:solid 1px #888" width="100%">
-          
-      <!--
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Classes</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-              <li><a href="#">Sub-link</a></li>
-              
-            </ul>
-          </li>
-        </ul>
-
-        <ul class="nav navbar-right navbar-nav">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-            <ul class="dropdown-menu" style="padding:12px;">
-                <form class="form-inline">
-                    <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-                </form>
-             </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> <i class="glyphicon glyphicon-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Logout</a></li>
-              <li><a href="#">Profile</a></li>
-              <li class="divider"></li>
-              <li><a href="#">About</a></li>
-             </ul>
-          </li>
-        </ul>
-          
-      -->
-
-
       </div>
     </div>
 </nav><!-- /.navbar -->
 
-<header class="masthead">
-  <div class="container">
-    <div class="row">
-
-    </div>
-  </div>
-</header>
-
 <!-- Begin Body -->
 <div class="container">
-    <div class="no-gutter row">
-           
-          
-        <div class="panel">
-          <div class="panel-heading" style="background-color:#888;color:#fff;">Update: {{class}}</div>   
-                <div class="panel-body">
-                  
-                  <div class="row">
-                  <div class="col-md-8">
-                  <div id="wrapper">
-          
-          <form method="post" action="/updatenote">
-            <textarea name="text" rows="4" style="word-wrap: break-word; width: 100%; height: 160px;margin-top: 15px;">{{update_note}}</textarea>  
-            <br>
-            <input id="updateNote" type="submit" style=" text-align: center; width: 100%;" value="Update">
-                    </form>
-                  </div>
-                  </div> 
-                  <br>
-            <form method="get" action="/class/{{class}}">
-              <input type="submit" style="text-align:center; width: 100%;" value="Classmates' Notes">
-            </form>
-                </div> 
-                  <!--/panel-body-->
-                </div><!--/panel-->
-                <!--/end right column-->
-        </div>
-
-
-    </div> <!-- end gutter row -->
+	<div class="no-gutter row">
+      		<!-- left side column -->
+  			<div class="col-md-2">
+              	<div class="panel panel-default" id="sidebar">
+					<div class="panel-heading">Update: {{class}}</div> 
+					<div class="panel-body">
+						<div class="accordion" id="accordion2">
+							<div class="accordion-group">
+								<div id="collapseOne" class="accordion-body collapse in">
+									<div class="accordion-inner">
+										 <form method="post" action="/updatenote">
+											<textarea name="text" rows="4" style="word-wrap: break-word; width: 100%; height: 160px;margin-top: 15px;">{{update_note}}</textarea>  
+							<br>
+											<input id="updateNote" type="submit" style=" text-align: center; width: 100%;" value="Update">
+										</form>
+										<form method="get" action="/class/{{class}}">
+											<input type="submit" style="text-align:center; width: 100%;" value="Classmates' Notes">
+										</form>
+									</div>
+								</div>
+							</div>
+						</div><!--/acc-->
+					</div><!--/panel body-->
+				</div><!--/panel-->
+				</div>
+      		</div><!--/end left column-->
+  	</div> <!-- end gutter row -->
 </div> <!-- end container -->
+<!-- script references -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script>
+	$("#updateNote").click(function(){
+		alert("Your note has been updated!");
+	});
 
-    <!-- script references -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/scripts.js"></script>
-
-        <script>
-          $("#updateNote").click(function(){
-
-            alert("Your note has been updated!");
-
-
-          });
-
-        </script>
+</script>
 
     </body>
 </html>
