@@ -8,6 +8,7 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 var mongoose = require('mongoose');
+var session = require('express-session');
 
 var index = require('./routes/index');
 var my_notes = require('./routes/my_notes');
@@ -39,7 +40,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
-app.use(express.session());
+app.use(express.session({secret: 'some_secret'}));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -51,18 +52,15 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-app.post('/', user.saveuser);
+
 
 //app.get('/project/:id', project.projectInfo);
 app.get('/user', user.viewuser);
 app.post('/user', user.finduser);
 app.get('/my_notes', my_notes.viewnotes);
-app.post('/addnote', my_notes.addnote);
 app.post('/updatenote', my_notes.updatenote);
 app.post('/addclass', user.addclass);
 app.post('/deleteclass', user.deleteclass);
-app.post('/addclassn', user.addclassn);
-app.post('/deleteclassn', user.deleteclassn);
 
 app.get('/forgot', function(req, res) {
 	res.render('forgot', {})
@@ -71,16 +69,9 @@ app.get('/forgot', function(req, res) {
 app.get('/tutorial', function(req, res) {
 	res.render('tutorial', {})
 });
-
+app.post('/signup', user.saveuser);
 app.get('/signup', function(req, res) {
-		var random_num = Math.random();
-	if(random_num > 0.5) {
-		res.render('signup', {});
-	}
-	else {
-		res.render('signup', {});
-	}
-	res.render('signup2', {})
+		res.render('signup', {'error':false})
 });
 app.get('/edit_note/:class', my_notes.pullnote);
 app.get('/logout', logout.view);

@@ -176,15 +176,19 @@ body {
     color: #aaaaaa;
     text-decoration: none;
 }
+p#errormsg {
+color: red;
+}
 </style>
     
 <div id="wrapper">
-	<form id="signup" class="front box" method="post" action="/">
+	<form id="signup" class="front box" method="post" action="/signup">
 		<div class="default"><img src="http://www.icon2s.com/img256/256x256-round-text-edit-note.png"/></i><h1>Create Account</h1></div>
+		<p id="errormsg"></p>
 		<input type="text" placeholder="Username" name="username"/>
 		<input type="text" placeholder="UCSD Email" name="email" />
 		<input type="password" placeholder="Password" name="password" />
-		<input type="password" placeholder=" Confirm Password" />
+		<input type="password" placeholder="Confirm Password" name="password2" />
 		
 		<button type="submit">Sign Up</button><br><br>
 		<div class ="forgot">
@@ -194,5 +198,13 @@ body {
 		</div>
 	</form>
 </div>
+<script>
+	var message = document.getElementById("errormsg");
+
+	if({{error}})
+		message.innerHTML = "Sorry, either that email already has an account or your passwords do not match.";
+	else
+		message.innerHTML = "";
+</script>
 </body>
 </html>
